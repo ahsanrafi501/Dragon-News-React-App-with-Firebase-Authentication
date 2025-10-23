@@ -1,9 +1,8 @@
 import React, { use } from 'react';
 import { NavLink } from 'react-router';
-import "./AllCategories.css"
 
 
-const categoryPromise = fetch("categories.json").then(res => res.json());
+const categoryPromise = fetch("/categories.json").then(res => res.json());
 
 const AllCatagories = () => {
 

@@ -14,7 +14,7 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "/category/:id",
+        path: "category/:id",
         element: <CategoryNews></CategoryNews>,
         loader: () => fetch("/news.json"), // ✅ fixed
         errorElement: <h2 className="text-center text-red-500">Failed to load news.</h2>,
