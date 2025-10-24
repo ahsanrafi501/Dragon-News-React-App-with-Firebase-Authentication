@@ -3,6 +3,9 @@ import Header from "../Components/Header";
 import HomeLayout from "../Layout/HomeLayout";
 import Home from "../Pages/Home/Home";
 import CategoryNews from "../Pages/CatagoryNews/CategoryNews";
+import Login from "../Pages/Login/Login";
+import Register from "../Pages/Register/Register";
+import AuthenticationLayout from "../Layout/AuthenticationLayout";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +26,17 @@ const router = createBrowserRouter([
   },
   {
     path: "/auth",
-    element: <h2>authentication Layout</h2>,
+    element: <AuthenticationLayout></AuthenticationLayout>,
+    children:[
+      {
+        path: "/auth/login",
+        element: <Login></Login>
+      },
+      {
+        path: "/auth/register",
+        element: <Register></Register>
+      }
+    ]
   },
   {
     path: "/news",
