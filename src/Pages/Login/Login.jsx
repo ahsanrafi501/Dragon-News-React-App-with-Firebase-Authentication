@@ -15,7 +15,7 @@ const Login = () => {
     e.preventDefault()
     logInWithEmail(email, password)
     .then(result => {
-      // console.log(result);
+      console.log(result);
       navigate(`${location.state ? location.state.pathname : '/' }`);
     }).catch(error => console.log(error));
   }
