@@ -6,6 +6,10 @@ import CategoryNews from "../Pages/CatagoryNews/CategoryNews";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import AuthenticationLayout from "../Layout/AuthenticationLayout";
+import NewsDetails from "../Pages/NewsDetails/NewsDetails";
+import AuthProvider from "../Provider/AuthProvider";
+import PrivateRoute from "../Provider/PrivateRoute";
+import Loading from "../Components/Loading/Loading";
 
 const router = createBrowserRouter([
   {
@@ -19,28 +23,39 @@ const router = createBrowserRouter([
       {
         path: "category/:id",
         element: <CategoryNews></CategoryNews>,
-        loader: () => fetch("/news.json"), // ✅ fixed
-        errorElement: <h2 className="text-center text-red-500">Failed to load news.</h2>,
+        loader: () => fetch("/news.json"),
+        hydrateFallbackElement: <Loading></Loading>,
+        errorElement: (
+          <h2 className="text-center text-red-500">Failed to load news.</h2>
+        ),
       },
     ],
   },
   {
     path: "/auth",
     element: <AuthenticationLayout></AuthenticationLayout>,
-    children:[
+    children: [
       {
         path: "/auth/login",
-        element: <Login></Login>
+        element: <Login></Login>,
       },
       {
         path: "/auth/register",
-        element: <Register></Register>
-      }
-    ]
+        element: <Register></Register>,
+      },
+    ],
   },
   {
-    path: "/news",
-    element: <h2>News Layout</h2>,
+    path: "/news-details/:id",
+    element: (
+      <PrivateRoute>
+        <NewsDetails></NewsDetails>
+      </PrivateRoute>
+        
+      
+    ),
+    loader: () => fetch("/news.json"),
+    hydrateFallbackElement: <Loading></Loading>,
   },
   {
     path: "/*",

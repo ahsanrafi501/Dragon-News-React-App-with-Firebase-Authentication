@@ -1,16 +1,32 @@
-# React + Vite
+# Dragon News
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Dragon News is a modern, responsive news web application built with **React**, **Vite**, **React Router**, and **Firebase**. Users can browse news categories, read detailed news articles, and manage authentication with email login.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- **News Listing:** Browse news articles by categories.  
+- **News Details:** View full details of a selected news article.  
+- **Authentication:** Sign up and login using email/password via Firebase.  
+- **Protected Routes:** Certain pages are accessible only after login.  
+- **Responsive Design:** Works on desktop, tablet, and mobile devices.  
+- **Right Sidebar:** Latest news, trending articles, or ads can be displayed.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend:** React 18, Vite  
+- **Routing:** React Router v6+  
+- **Backend / Authentication:** Firebase Authentication  
+- **Styling:** Tailwind CSS  
+- **State Management:** React Context API
+
+---
+
+## Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/dragon-news.git
